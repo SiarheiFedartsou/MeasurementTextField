@@ -23,6 +23,12 @@ class ViewController: UIViewController {
         PickerColumn(unit: UnitMass.grams, range: 0...1000, step: 100)
     ]))
     
+    private let angleTextField = MeasurementTextField<UnitAngle>(inputType: .picker([
+        PickerColumn(unit: UnitAngle.degrees, range: 0...360),
+        PickerColumn(unit: UnitAngle.arcMinutes, range: 0...360),
+        PickerColumn(unit: UnitAngle.arcSeconds, range: 0...360),
+    ]))
+    
     private func onValueChanged<T: Dimension>(_ value: Measurement<T>?) {
         if let value = value {
             let formatter = MeasurementFormatter()
@@ -40,6 +46,7 @@ class ViewController: UIViewController {
         view.addSubview(heightTextField2)
         view.addSubview(weightTextField1)
         view.addSubview(weightTextField2)
+        view.addSubview(angleTextField)
         
         heightTextField1.onValueChanged = self.onValueChanged
         heightTextField2.onValueChanged = self.onValueChanged
@@ -53,6 +60,8 @@ class ViewController: UIViewController {
         weightTextField1.textField.borderStyle = .roundedRect
         weightTextField2.textField.borderStyle = .roundedRect
         weightTextField2.textField.placeholder = "Weight"
+        
+        angleTextField.textField.placeholder = "Angle"
     }
 
     override func viewDidLayoutSubviews() {
@@ -61,6 +70,7 @@ class ViewController: UIViewController {
         heightTextField2.frame = CGRect(x: 40, y: 100, width: UIScreen.main.bounds.width - 80, height: 44)
         weightTextField1.frame = CGRect(x: 40, y: 160, width: UIScreen.main.bounds.width - 80, height: 44)
         weightTextField2.frame = CGRect(x: 40, y: 220, width: UIScreen.main.bounds.width - 80, height: 44)
+        angleTextField.frame = CGRect(x: 40, y: 280, width: UIScreen.main.bounds.width - 80, height: 44)
     }
 
 }
