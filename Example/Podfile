@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MeasurementTextField_Example' do
+  pod 'MeasurementTextField', :path => '../'
+
+  target 'MeasurementTextField_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

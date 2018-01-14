@@ -1,0 +1,6 @@
+framework module Pods_MeasurementTextField_Example {
+  umbrella header "Pods-MeasurementTextField_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
