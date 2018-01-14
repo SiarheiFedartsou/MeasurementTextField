@@ -63,8 +63,9 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
         switch inputType {
         case let .keyboardInput(unit, showMeasureUnit):
             guard showMeasureUnit else { return }
+            let formatter = MeasurementFormatter()
             let unitLabel = UILabel()
-            unitLabel.text = unit.symbol
+            unitLabel.text = formatter.string(from: unit)
             unitLabel.sizeToFit()
             unitLabel.frame.size.width += Layout.measureUnitLabelRightInset
             internalTextField.rightView = unitLabel
