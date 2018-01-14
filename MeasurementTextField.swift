@@ -49,7 +49,8 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
         addSubview(internalTextField)
         
         switch inputType {
-        case let .keyboard(unit):
+        case let .keyboardInput(unit, showMeasureUnit):
+            guard showMeasureUnit else { return }
             let unitLabel = UILabel()
             unitLabel.text = unit.symbol
             unitLabel.sizeToFit()
@@ -77,7 +78,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
             internalValue = newValue
             
             switch inputType {
-            case let .keyboard(unit):
+            case let .keyboardInput(unit, _):
                 guard let value = value else {
                     internalTextField.text = ""
                     return
@@ -107,7 +108,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
             return
         }
         
-        guard case let .keyboard(unit) = inputType else { return }
+        guard case let .keyboardInput(unit, _) = inputType else { return }
         guard let decimalValue = doubleFromString(text) else {
             internalValue = nil
             onValueChanged(nil)
@@ -127,7 +128,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
     }
     
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard case .keyboard = inputType else { return false }
+        guard case .keyboardInput = inputType else { return false }
         guard let text = textField.text as NSString? else { return false }
         let newText = text.replacingCharacters(in: range, with: string)
         return doubleFromString(newText) != nil || newText.isEmpty
@@ -152,6 +153,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
 
         let formatter = MeasurementFormatter()
         formatter.unitStyle = .short
+        
         let formattedUnit = formatter.string(from: column.unit)
         guard let formattedValue = formatter.numberFormatter.string(from: column.rows[row] as NSNumber) else {
             return nil
