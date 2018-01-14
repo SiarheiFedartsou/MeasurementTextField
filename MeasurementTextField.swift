@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 private enum Layout {
     static let measureUnitLabelRightInset: CGFloat = 10.0
 }
@@ -36,6 +37,17 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
     private let inputType: InputType<UnitType>
     
     public init(inputType: InputType<UnitType>) {
+        #if DEBUG
+            if case let .picker(columns) = inputType {
+                var lastValue = Double.greatestFiniteMagnitude
+                for column in columns {
+                    let value = Measurement(value: 1.0, unit: column.unit).converted(to: UnitType.baseUnit()).value
+                    assert(value < lastValue, "Columns should be ordered from largest to smallest units")
+                    lastValue = value
+                }
+            }
+        #endif
+        
         self.inputType = inputType
         super.init(frame: .zero)
         setup()
@@ -153,12 +165,11 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
 
         let formatter = MeasurementFormatter()
         formatter.unitStyle = .short
+        formatter.unitOptions = .providedUnit
         
-        let formattedUnit = formatter.string(from: column.unit)
-        guard let formattedValue = formatter.numberFormatter.string(from: column.rows[row] as NSNumber) else {
-            return nil
-        }
-        return "\(formattedValue) \(formattedUnit)"
+        let measurement = Measurement(value: column.rows[row], unit: column.unit)
+        
+        return formatter.string(from: measurement)
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -204,28 +215,37 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
     
     private func setPicker(to value: Measurement<UnitType>?, columns: [PickerColumn<UnitType>]) {
         guard let value = value else { return }
-        let paths = columns.map { $0.rows.enumerated().map { $0.offset } }
-        let product = Product(paths)
-
-        let selectedPath = product.min { pathA, pathB in
-            guard let valueA = self.value(at: pathA, in: columns) else {
-                assert(false)
-                return false
+        
+        var columnPath: ColumnPath = []
+        var accumulator: Measurement<UnitType>?
+        
+        for (columnIndex, column) in columns.enumerated() {
+            columnPath.append(0)
+            
+            let convertedValue: Measurement<UnitType>
+            if let accumulator = accumulator {
+                convertedValue = value.converted(to: column.unit) - accumulator.converted(to: column.unit)
+            } else {
+                convertedValue = value.converted(to: column.unit)
             }
-            let differenceA = abs(valueA.converted(to: value.unit).value - value.value)
-            guard let valueB = self.value(at: pathB, in: columns) else {
-                assert(false)
-                return false
+            for (rowIndex, row) in column.rows.enumerated() {
+                if row - convertedValue.value > 0.0 {
+                    columnPath[columnIndex] = max(0, rowIndex - 1)
+                    break
+                }
             }
-            let differenceB = abs(valueB.converted(to: value.unit).value - value.value)
-            return differenceA < differenceB
-        } ?? []
-
-        for (columnIndex, rowIndex) in selectedPath.enumerated() {
-            pickerView.selectRow(rowIndex, inComponent: columnIndex, animated: false)
+            
+            let selectedValue = column.rows[columnPath[columnIndex]]
+            let selectedMeasurement = Measurement(value: selectedValue, unit: column.unit)
+            accumulator = accumulator.flatMap { $0 + selectedMeasurement } ?? selectedMeasurement
         }
         
-        showValue(for: selectedPath, columns: columns)
+        assert(columnPath.count == columns.count)
+        
+        for (column, row) in columnPath.enumerated() {
+            pickerView.selectRow(row, inComponent: column, animated: false)
+        }
+        showValue(for: columnPath, columns: columns)
     }
     
     private func sumOf(_ measurements: [Measurement<UnitType>]) -> Measurement<UnitType>? {

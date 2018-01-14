@@ -11,7 +11,6 @@
 		3C1F82F66688E94DEC38DDB6D0F96E23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		427566E13CCD61F885FF6D8766845665 /* MeasurementTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6189585262A9D58CC284ACFA470D067 /* MeasurementTextField-dummy.m */; };
 		471F40E1200A93A600EB245E /* MeasurementTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E0200A93A500EB245E /* MeasurementTextField.swift */; };
-		471F40E3200B8C3500EB245E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E2200B8C3500EB245E /* Product.swift */; };
 		471F40E5200B90E400EB245E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E4200B90E400EB245E /* TextField.swift */; };
 		471F40E7200B92ED00EB245E /* UIPickerView+ColumnPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E6200B92ED00EB245E /* UIPickerView+ColumnPath.swift */; };
 		471F40E9200B939900EB245E /* ColumnPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E8200B939900EB245E /* ColumnPath.swift */; };
@@ -44,7 +43,6 @@
 		32EDA7AD79D906839440F46A56E0BA48 /* Pods-MeasurementTextField_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MeasurementTextField_Tests-dummy.m"; sourceTree = "<group>"; };
 		38B086C1579541A98C2126B05F5750A2 /* Pods-MeasurementTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MeasurementTextField_Example.modulemap"; sourceTree = "<group>"; };
 		471F40E0200A93A500EB245E /* MeasurementTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementTextField.swift; sourceTree = "<group>"; };
-		471F40E2200B8C3500EB245E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		471F40E4200B90E400EB245E /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		471F40E6200B92ED00EB245E /* UIPickerView+ColumnPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPickerView+ColumnPath.swift"; sourceTree = "<group>"; };
 		471F40E8200B939900EB245E /* ColumnPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnPath.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				471F40E0200A93A500EB245E /* MeasurementTextField.swift */,
-				471F40E2200B8C3500EB245E /* Product.swift */,
 				471F40E4200B90E400EB245E /* TextField.swift */,
 				471F40E6200B92ED00EB245E /* UIPickerView+ColumnPath.swift */,
 				471F40E8200B939900EB245E /* ColumnPath.swift */,
@@ -353,7 +350,6 @@
 				471F40EB200B95F600EB245E /* PickerColumn.swift in Sources */,
 				471F40ED200B960C00EB245E /* InputType.swift in Sources */,
 				471F40E7200B92ED00EB245E /* UIPickerView+ColumnPath.swift in Sources */,
-				471F40E3200B8C3500EB245E /* Product.swift in Sources */,
 				471F40E5200B90E400EB245E /* TextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

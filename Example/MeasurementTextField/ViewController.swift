@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     
     private let angleTextField = MeasurementTextField<UnitAngle>(inputType: .picker([
         PickerColumn(unit: UnitAngle.degrees, range: 0...360),
-        PickerColumn(unit: UnitAngle.arcMinutes, range: 0...360),
-        PickerColumn(unit: UnitAngle.arcSeconds, range: 0...360),
+        PickerColumn(unit: UnitAngle.arcMinutes, range: 0...60),
+        PickerColumn(unit: UnitAngle.arcSeconds, range: 0...60),
     ]))
     
     private func onValueChanged<T: Dimension>(_ value: Measurement<T>?) {
@@ -48,20 +48,23 @@ class ViewController: UIViewController {
         view.addSubview(weightTextField2)
         view.addSubview(angleTextField)
         
-        heightTextField1.onValueChanged = self.onValueChanged
-        heightTextField2.onValueChanged = self.onValueChanged
-        weightTextField1.onValueChanged = self.onValueChanged
-        weightTextField2.onValueChanged = self.onValueChanged
+        heightTextField1.onValueChanged = { [weak self] value in self?.onValueChanged(value) }
+        heightTextField2.onValueChanged = { [weak self] value in self?.onValueChanged(value) }
+        weightTextField1.onValueChanged = { [weak self] value in self?.onValueChanged(value) }
+        weightTextField2.onValueChanged = { [weak self] value in self?.onValueChanged(value) }
+        angleTextField.onValueChanged = { [weak self] value in self?.onValueChanged(value) }
         
+
         heightTextField1.value = Measurement(value: 1.5, unit: .meters)
         heightTextField2.value = Measurement(value: 1.6, unit: .meters)
-        
+
         heightTextField1.textField.borderStyle = .roundedRect
         weightTextField1.textField.borderStyle = .roundedRect
         weightTextField2.textField.borderStyle = .roundedRect
         weightTextField2.textField.placeholder = "Weight"
         
         angleTextField.textField.placeholder = "Angle"
+        angleTextField.value = Measurement(value: 150.5, unit: .degrees)
     }
 
     override func viewDidLayoutSubviews() {
