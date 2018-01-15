@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05A479EB86A0550E8C7B7C110579A35A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		1B65A85045AD632407C8FC12C3EF1839 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		3C1F82F66688E94DEC38DDB6D0F96E23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		427566E13CCD61F885FF6D8766845665 /* MeasurementTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6189585262A9D58CC284ACFA470D067 /* MeasurementTextField-dummy.m */; };
-		471F40E1200A93A600EB245E /* MeasurementTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E0200A93A500EB245E /* MeasurementTextField.swift */; };
-		471F40E5200B90E400EB245E /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E4200B90E400EB245E /* TextField.swift */; };
-		471F40E7200B92ED00EB245E /* UIPickerView+ColumnPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E6200B92ED00EB245E /* UIPickerView+ColumnPath.swift */; };
-		471F40E9200B939900EB245E /* ColumnPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E8200B939900EB245E /* ColumnPath.swift */; };
-		471F40EB200B95F600EB245E /* PickerColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40EA200B95F600EB245E /* PickerColumn.swift */; };
-		471F40ED200B960C00EB245E /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40EC200B960C00EB245E /* InputType.swift */; };
-		471F40EF200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40EE200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift */; };
+		2112D8E6780DA608D0555BBA9D9A57BE /* MeasurementTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6087AF268630A1F5E9AB1671259BB58F /* MeasurementTextField-dummy.m */; };
+		2840BCB03EBFE5E0F48D499458BFB45B /* MeasurementTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D9BC9DD789D2C7F92A7AE8181DBA1E38 /* MeasurementTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36F3C2864DB65A063C3C6D4F8826FE86 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA67B4A6E45AFF8A76898E5333C579B8 /* TextField.swift */; };
+		3E8EDD497B6616175D231E2B0A64A9F0 /* ColumnPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0E7A0E5295AEDAAD6D5DEBB84CA26E /* ColumnPath.swift */; };
+		452B86022FCEE5ED17F9ECAEA5337234 /* UIPickerView+ColumnPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54669005F28CEEB170FE8BE63788AE7D /* UIPickerView+ColumnPath.swift */; };
 		4D896C7193FD31481E61600E64DF8683 /* Pods-MeasurementTextField_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FAFA929CE4EF0E9C465A764FF890CDC /* Pods-MeasurementTextField_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		531129E8ACB5760DFFBFE95D692AA0FD /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A92B9FDD59DFA2C3119A08CF2D0E0F /* InputType.swift */; };
 		5A2614290532F8CA22701A6338E8433A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		6FBFAD48FF6574F8CA003636971AF462 /* MeasurementTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8990E77B981C72042BC8053580165926 /* MeasurementTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		73D8AF7C7B98A8323D61DF3465D0B691 /* MeasurementTextField+BodyMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E83AF5AB2A7EFABE606ABD3F0A982 /* MeasurementTextField+BodyMetrics.swift */; };
+		9BEC388F75DF599281F3BF0A4303F49F /* MeasurementTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84644252174E356D99DC7E9461ADDBAA /* MeasurementTextField.swift */; };
 		C5C8C1AB04445F3A1545F1465732796D /* Pods-MeasurementTextField_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CBEF1C04E8CE901F4A1C3CCB05F000DD /* Pods-MeasurementTextField_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA2CE14BA3971E40B98D7BC3EEC01E15 /* PickerColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5759382C889FD90DE75A5A9BA433B47 /* PickerColumn.swift */; };
 		EB07E91B9D20C6514D20E2AFC4423F23 /* Pods-MeasurementTextField_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32EDA7AD79D906839440F46A56E0BA48 /* Pods-MeasurementTextField_Tests-dummy.m */; };
 		EBDC2D5139A7F247818DC8CB06FC0109 /* Pods-MeasurementTextField_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD857C4034EDD52677210F0D254A3127 /* Pods-MeasurementTextField_Example-dummy.m */; };
 /* End PBXBuildFile section */
@@ -30,50 +30,50 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 84C82EC0A66725223FDDE1D4589D8494;
+			remoteGlobalIDString = 704C69988D23FD0424D303C91BA58477;
 			remoteInfo = MeasurementTextField;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0DF5FEC1053042155E6FFB8A04FD5813 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EA62F2FFEC89AF0014C398D740CB164 /* MeasurementTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MeasurementTextField.xcconfig; sourceTree = "<group>"; };
 		161C8BBEB04D6AEA2B2307FBF6E11AC7 /* Pods-MeasurementTextField_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MeasurementTextField_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		23C74312D138CB35BEE29D763DA51A3D /* Pods-MeasurementTextField_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MeasurementTextField_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		2FAFA929CE4EF0E9C465A764FF890CDC /* Pods-MeasurementTextField_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MeasurementTextField_Example-umbrella.h"; sourceTree = "<group>"; };
 		32EDA7AD79D906839440F46A56E0BA48 /* Pods-MeasurementTextField_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MeasurementTextField_Tests-dummy.m"; sourceTree = "<group>"; };
-		38B086C1579541A98C2126B05F5750A2 /* Pods-MeasurementTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MeasurementTextField_Example.modulemap"; sourceTree = "<group>"; };
-		471F40E0200A93A500EB245E /* MeasurementTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeasurementTextField.swift; sourceTree = "<group>"; };
-		471F40E4200B90E400EB245E /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		471F40E6200B92ED00EB245E /* UIPickerView+ColumnPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPickerView+ColumnPath.swift"; sourceTree = "<group>"; };
-		471F40E8200B939900EB245E /* ColumnPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnPath.swift; sourceTree = "<group>"; };
-		471F40EA200B95F600EB245E /* PickerColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerColumn.swift; sourceTree = "<group>"; };
-		471F40EC200B960C00EB245E /* InputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
-		471F40EE200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeasurementTextField+BodyMetrics.swift"; sourceTree = "<group>"; };
+		38B086C1579541A98C2126B05F5750A2 /* Pods-MeasurementTextField_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MeasurementTextField_Example.modulemap"; sourceTree = "<group>"; };
+		42A92B9FDD59DFA2C3119A08CF2D0E0F /* InputType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputType.swift; path = MeasurementTextField/Classes/InputType.swift; sourceTree = "<group>"; };
 		49302D8A11E5417E9A6F6DDEAC285010 /* Pods-MeasurementTextField_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MeasurementTextField_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		526D342D2E6247A90E21CD1D8F6BA704 /* Pods_MeasurementTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeasurementTextField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		526D342D2E6247A90E21CD1D8F6BA704 /* Pods_MeasurementTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MeasurementTextField_Tests.framework; path = "Pods-MeasurementTextField_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		54669005F28CEEB170FE8BE63788AE7D /* UIPickerView+ColumnPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIPickerView+ColumnPath.swift"; path = "MeasurementTextField/Classes/UIPickerView+ColumnPath.swift"; sourceTree = "<group>"; };
 		55EE4C454BF0B73678D8638356C972BF /* Pods-MeasurementTextField_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MeasurementTextField_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6087AF268630A1F5E9AB1671259BB58F /* MeasurementTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MeasurementTextField-dummy.m"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6B13F868ED39CE2B3CF4FC9284D033A5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E3FA49FA69533C45E2107884CEE143A /* Pods_MeasurementTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeasurementTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3FA49FA69533C45E2107884CEE143A /* Pods_MeasurementTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MeasurementTextField_Example.framework; path = "Pods-MeasurementTextField_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B80BBED485FD7974496995403601832 /* Pods-MeasurementTextField_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MeasurementTextField_Tests-resources.sh"; sourceTree = "<group>"; };
-		8990E77B981C72042BC8053580165926 /* MeasurementTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MeasurementTextField-umbrella.h"; sourceTree = "<group>"; };
+		84644252174E356D99DC7E9461ADDBAA /* MeasurementTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MeasurementTextField.swift; path = MeasurementTextField/Classes/MeasurementTextField.swift; sourceTree = "<group>"; };
+		870787D51937920A2E6C2608FE3465B3 /* MeasurementTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MeasurementTextField-prefix.pch"; sourceTree = "<group>"; };
 		919BC83BB6CBD3288A82DB75A4E40D4F /* Pods-MeasurementTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MeasurementTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
 		922CB6159073EC5BB416704441FEB5B5 /* Pods-MeasurementTextField_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MeasurementTextField_Example-frameworks.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		978ED989491A6728DFB1A3DC63911A9D /* MeasurementTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MeasurementTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		978ED989491A6728DFB1A3DC63911A9D /* MeasurementTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MeasurementTextField.framework; path = MeasurementTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5759382C889FD90DE75A5A9BA433B47 /* PickerColumn.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerColumn.swift; path = MeasurementTextField/Classes/PickerColumn.swift; sourceTree = "<group>"; };
+		AB2A37F82213C980FC45076EAF369338 /* MeasurementTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MeasurementTextField.xcconfig; sourceTree = "<group>"; };
+		B30E83AF5AB2A7EFABE606ABD3F0A982 /* MeasurementTextField+BodyMetrics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MeasurementTextField+BodyMetrics.swift"; path = "MeasurementTextField/Classes/MeasurementTextField+BodyMetrics.swift"; sourceTree = "<group>"; };
 		B6995BD4A84EC153A2C2CAA7F83CFDC2 /* Pods-MeasurementTextField_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MeasurementTextField_Example-resources.sh"; sourceTree = "<group>"; };
-		B9B36A6F74D172936AD719EF7F648E79 /* MeasurementTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MeasurementTextField-prefix.pch"; sourceTree = "<group>"; };
+		B7C746875F7194FD6CD6CE2AF316E343 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA67B4A6E45AFF8A76898E5333C579B8 /* TextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = MeasurementTextField/Classes/TextField.swift; sourceTree = "<group>"; };
 		CBEF1C04E8CE901F4A1C3CCB05F000DD /* Pods-MeasurementTextField_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MeasurementTextField_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D1958A68FA8C331BB2F93301E913805B /* Pods-MeasurementTextField_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MeasurementTextField_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D553F470E7E2DB65CB8D23371AE6B6E2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9BC9DD789D2C7F92A7AE8181DBA1E38 /* MeasurementTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MeasurementTextField-umbrella.h"; sourceTree = "<group>"; };
 		DD857C4034EDD52677210F0D254A3127 /* Pods-MeasurementTextField_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MeasurementTextField_Example-dummy.m"; sourceTree = "<group>"; };
-		DE407B695D5E496DE743A8B5638177A4 /* MeasurementTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MeasurementTextField.modulemap; sourceTree = "<group>"; };
 		E38E04F0CBFAE6FDBE6617E3B6BCA11B /* Pods-MeasurementTextField_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MeasurementTextField_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E6189585262A9D58CC284ACFA470D067 /* MeasurementTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MeasurementTextField-dummy.m"; sourceTree = "<group>"; };
+		EF0E7A0E5295AEDAAD6D5DEBB84CA26E /* ColumnPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColumnPath.swift; path = MeasurementTextField/Classes/ColumnPath.swift; sourceTree = "<group>"; };
 		F43567A0036372568A80494DE71A4AE5 /* Pods-MeasurementTextField_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MeasurementTextField_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F954D757883EB98625ACBF2E924DE41A /* MeasurementTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MeasurementTextField.modulemap; sourceTree = "<group>"; };
 		FD837F746F6BB38EA579CABD47D3F7D5 /* Pods-MeasurementTextField_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MeasurementTextField_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		FE89ECCA1687BF691D41F5E38D3A8AE0 /* Pods-MeasurementTextField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MeasurementTextField_Tests.modulemap"; sourceTree = "<group>"; };
+		FE89ECCA1687BF691D41F5E38D3A8AE0 /* Pods-MeasurementTextField_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MeasurementTextField_Tests.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +85,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BDDA2E26E8C5D05599C805F093193DA9 /* Frameworks */ = {
+		308531A03F514D6472AA59D19120A133 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1F82F66688E94DEC38DDB6D0F96E23 /* Foundation.framework in Frameworks */,
+				05A479EB86A0550E8C7B7C110579A35A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,22 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1651BE91FEEB20074A91A9F3CB5A7E93 /* MeasurementTextField */ = {
-			isa = PBXGroup;
-			children = (
-				471F40E0200A93A500EB245E /* MeasurementTextField.swift */,
-				471F40E4200B90E400EB245E /* TextField.swift */,
-				471F40E6200B92ED00EB245E /* UIPickerView+ColumnPath.swift */,
-				471F40E8200B939900EB245E /* ColumnPath.swift */,
-				471F40EA200B95F600EB245E /* PickerColumn.swift */,
-				471F40EC200B960C00EB245E /* InputType.swift */,
-				FFBF69DE532099CBB86F772516A6092E /* Support Files */,
-				471F40EE200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift */,
-			);
-			name = MeasurementTextField;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		3E83852D2B5B77303C0E941D32167C2A /* Pods-MeasurementTextField_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				F712E495BBE0979277C6A2BECD87C312 /* Development Pods */,
+				BCBCB37128BF22C0C7DE3D56FA8C7325 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				9534E676EEC43B08EF581805FE9C10E9 /* Products */,
 				675BC6445AE9FE82A4160FB3ECF86F7B /* Targets Support Files */,
@@ -186,12 +170,36 @@
 			path = "Target Support Files/Pods-MeasurementTextField_Example";
 			sourceTree = "<group>";
 		};
+		992B2AF87033D3725FF9456D929C0D63 /* MeasurementTextField */ = {
+			isa = PBXGroup;
+			children = (
+				EF0E7A0E5295AEDAAD6D5DEBB84CA26E /* ColumnPath.swift */,
+				42A92B9FDD59DFA2C3119A08CF2D0E0F /* InputType.swift */,
+				84644252174E356D99DC7E9461ADDBAA /* MeasurementTextField.swift */,
+				B30E83AF5AB2A7EFABE606ABD3F0A982 /* MeasurementTextField+BodyMetrics.swift */,
+				A5759382C889FD90DE75A5A9BA433B47 /* PickerColumn.swift */,
+				BA67B4A6E45AFF8A76898E5333C579B8 /* TextField.swift */,
+				54669005F28CEEB170FE8BE63788AE7D /* UIPickerView+ColumnPath.swift */,
+				E06B6885F888E004F0CD63664D1BA677 /* Support Files */,
+			);
+			name = MeasurementTextField;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCBCB37128BF22C0C7DE3D56FA8C7325 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				992B2AF87033D3725FF9456D929C0D63 /* MeasurementTextField */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -202,23 +210,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		F712E495BBE0979277C6A2BECD87C312 /* Development Pods */ = {
+		E06B6885F888E004F0CD63664D1BA677 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				1651BE91FEEB20074A91A9F3CB5A7E93 /* MeasurementTextField */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		FFBF69DE532099CBB86F772516A6092E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D553F470E7E2DB65CB8D23371AE6B6E2 /* Info.plist */,
-				DE407B695D5E496DE743A8B5638177A4 /* MeasurementTextField.modulemap */,
-				0EA62F2FFEC89AF0014C398D740CB164 /* MeasurementTextField.xcconfig */,
-				E6189585262A9D58CC284ACFA470D067 /* MeasurementTextField-dummy.m */,
-				B9B36A6F74D172936AD719EF7F648E79 /* MeasurementTextField-prefix.pch */,
-				8990E77B981C72042BC8053580165926 /* MeasurementTextField-umbrella.h */,
+				B7C746875F7194FD6CD6CE2AF316E343 /* Info.plist */,
+				F954D757883EB98625ACBF2E924DE41A /* MeasurementTextField.modulemap */,
+				AB2A37F82213C980FC45076EAF369338 /* MeasurementTextField.xcconfig */,
+				6087AF268630A1F5E9AB1671259BB58F /* MeasurementTextField-dummy.m */,
+				870787D51937920A2E6C2608FE3465B3 /* MeasurementTextField-prefix.pch */,
+				D9BC9DD789D2C7F92A7AE8181DBA1E38 /* MeasurementTextField-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/MeasurementTextField";
@@ -235,14 +235,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C60BBCCF7700642534D07E842F654743 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6FBFAD48FF6574F8CA003636971AF462 /* MeasurementTextField-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F8D77AF05BE681731ACE9515985C9710 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,16 +243,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8F310326091B938B6219AE1044D526F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2840BCB03EBFE5E0F48D499458BFB45B /* MeasurementTextField-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		84C82EC0A66725223FDDE1D4589D8494 /* MeasurementTextField */ = {
+		704C69988D23FD0424D303C91BA58477 /* MeasurementTextField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 95E7052B2EA4997BE36F3F1E816F2ED7 /* Build configuration list for PBXNativeTarget "MeasurementTextField" */;
+			buildConfigurationList = 9E523B0ACBD3A13884B658D0B554EA64 /* Build configuration list for PBXNativeTarget "MeasurementTextField" */;
 			buildPhases = (
-				7A72EB1E9CC2B1EF4EBB81DABC54243A /* Sources */,
-				BDDA2E26E8C5D05599C805F093193DA9 /* Frameworks */,
-				C60BBCCF7700642534D07E842F654743 /* Headers */,
+				98E536A3B71051C063BA72326C48B43A /* Sources */,
+				308531A03F514D6472AA59D19120A133 /* Frameworks */,
+				F8F310326091B938B6219AE1044D526F /* Headers */,
 			);
 			buildRules = (
 			);
@@ -327,7 +327,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				84C82EC0A66725223FDDE1D4589D8494 /* MeasurementTextField */,
+				704C69988D23FD0424D303C91BA58477 /* MeasurementTextField */,
 				92C1685459B3F89B6893B10820C941FE /* Pods-MeasurementTextField_Example */,
 				E2E56C174CE4CD60E4A29D3B509A0482 /* Pods-MeasurementTextField_Tests */,
 			);
@@ -343,26 +343,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7A72EB1E9CC2B1EF4EBB81DABC54243A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				471F40E9200B939900EB245E /* ColumnPath.swift in Sources */,
-				427566E13CCD61F885FF6D8766845665 /* MeasurementTextField-dummy.m in Sources */,
-				471F40E1200A93A600EB245E /* MeasurementTextField.swift in Sources */,
-				471F40EB200B95F600EB245E /* PickerColumn.swift in Sources */,
-				471F40ED200B960C00EB245E /* InputType.swift in Sources */,
-				471F40E7200B92ED00EB245E /* UIPickerView+ColumnPath.swift in Sources */,
-				471F40E5200B90E400EB245E /* TextField.swift in Sources */,
-				471F40EF200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		84231185775D8E175B6CB36A4CE954E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EBDC2D5139A7F247818DC8CB06FC0109 /* Pods-MeasurementTextField_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98E536A3B71051C063BA72326C48B43A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E8EDD497B6616175D231E2B0A64A9F0 /* ColumnPath.swift in Sources */,
+				531129E8ACB5760DFFBFE95D692AA0FD /* InputType.swift in Sources */,
+				73D8AF7C7B98A8323D61DF3465D0B691 /* MeasurementTextField+BodyMetrics.swift in Sources */,
+				2112D8E6780DA608D0555BBA9D9A57BE /* MeasurementTextField-dummy.m in Sources */,
+				9BEC388F75DF599281F3BF0A4303F49F /* MeasurementTextField.swift in Sources */,
+				DA2CE14BA3971E40B98D7BC3EEC01E15 /* PickerColumn.swift in Sources */,
+				36F3C2864DB65A063C3C6D4F8826FE86 /* TextField.swift in Sources */,
+				452B86022FCEE5ED17F9ECAEA5337234 /* UIPickerView+ColumnPath.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,15 +372,15 @@
 		2DA420C479BD674EFB2BD49B280C119E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MeasurementTextField;
-			target = 84C82EC0A66725223FDDE1D4589D8494 /* MeasurementTextField */;
+			target = 704C69988D23FD0424D303C91BA58477 /* MeasurementTextField */;
 			targetProxy = 8A37159C70942DCD7BA66A6CE67D2E0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		14297E3BAC24D28EE8621758D4DBE08F /* Debug */ = {
+		21769E344C06FD71A61A7FBA124DB5E8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EA62F2FFEC89AF0014C398D740CB164 /* MeasurementTextField.xcconfig */;
+			baseConfigurationReference = AB2A37F82213C980FC45076EAF369338 /* MeasurementTextField.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -401,13 +401,14 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		24E32037A266EF7A41EE174719757576 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -624,38 +625,6 @@
 			};
 			name = Release;
 		};
-		DF9D577FD5E6C3A73933F3A419867DD8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0EA62F2FFEC89AF0014C398D740CB164 /* MeasurementTextField.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MeasurementTextField/MeasurementTextField-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MeasurementTextField/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MeasurementTextField/MeasurementTextField.modulemap";
-				PRODUCT_NAME = MeasurementTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		F0EAD1E58E28C36A7F7224B0FBBBD245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23C74312D138CB35BEE29D763DA51A3D /* Pods-MeasurementTextField_Tests.release.xcconfig */;
@@ -689,6 +658,37 @@
 			};
 			name = Release;
 		};
+		FA041208420156C74CF9530F77BEB189 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB2A37F82213C980FC45076EAF369338 /* MeasurementTextField.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MeasurementTextField/MeasurementTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MeasurementTextField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MeasurementTextField/MeasurementTextField.modulemap";
+				PRODUCT_NAME = MeasurementTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -701,20 +701,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		95E7052B2EA4997BE36F3F1E816F2ED7 /* Build configuration list for PBXNativeTarget "MeasurementTextField" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				14297E3BAC24D28EE8621758D4DBE08F /* Debug */,
-				DF9D577FD5E6C3A73933F3A419867DD8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9B72F3D45DDAD40B4E056887AB4A20F0 /* Build configuration list for PBXNativeTarget "Pods-MeasurementTextField_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				692D444C7FD09E3724A4090D266FAC54 /* Debug */,
 				769A7FBED363EC1136BBB3D5BA016C47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E523B0ACBD3A13884B658D0B554EA64 /* Build configuration list for PBXNativeTarget "MeasurementTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA041208420156C74CF9530F77BEB189 /* Debug */,
+				21769E344C06FD71A61A7FBA124DB5E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

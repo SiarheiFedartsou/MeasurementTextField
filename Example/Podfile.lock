@@ -1,5 +1,5 @@
 PODS:
-  - MeasurementTextField (0.1.0)
+  - MeasurementTextField (0.1)
 
 DEPENDENCIES:
   - MeasurementTextField (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  MeasurementTextField: 6aeef909504ccea930cf95ab46b6f2a6b3742e56
+  MeasurementTextField: 3d46db721bef45c17f1118c5ec138931f08809fa
 
 PODFILE CHECKSUM: 76875927e61cb35ab0d86243e6c3241f84bb1bbc
 

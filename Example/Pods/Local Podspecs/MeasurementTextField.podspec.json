@@ -1,8 +1,8 @@
 {
   "name": "MeasurementTextField",
-  "version": "0.1.0",
-  "summary": "A short description of MeasurementTextField.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.1",
+  "summary": "TextField-based control for (NS)Measurement values input",
+  "description": "UITextField-based control for (NS)Measurement values input. Provides type-safe keyboard and picker based input of different measurement such as length, mass, speed etc.",
   "homepage": "https://github.com/SiarheiFedartsou/MeasurementTextField",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/SiarheiFedartsou/MeasurementTextField.git",
-    "tag": "0.1.0"
+    "tag": "0.1"
   },
   "platforms": {
     "ios": "10.0"
