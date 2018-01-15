@@ -9,8 +9,8 @@ UITextField-based control for (NS)Measurement values input. Provides type-safe k
 
 ## Screenshots
 
-<img src="/images/screenshot1.png" alt="Screenshot 1" height="568" />
-<img src="/images/screenshot2.png" alt="Screenshot 2" height="568" />
+<img src="/images/screenshot1.png" alt="Screenshot 1" width="40%" />
+<img src="/images/screenshot2.png" alt="Screenshot 2" width="40%" />
 
 
 ## Example
