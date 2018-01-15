@@ -16,6 +16,7 @@
 		471F40E9200B939900EB245E /* ColumnPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40E8200B939900EB245E /* ColumnPath.swift */; };
 		471F40EB200B95F600EB245E /* PickerColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40EA200B95F600EB245E /* PickerColumn.swift */; };
 		471F40ED200B960C00EB245E /* InputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40EC200B960C00EB245E /* InputType.swift */; };
+		471F40EF200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471F40EE200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift */; };
 		4D896C7193FD31481E61600E64DF8683 /* Pods-MeasurementTextField_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FAFA929CE4EF0E9C465A764FF890CDC /* Pods-MeasurementTextField_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A2614290532F8CA22701A6338E8433A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		6FBFAD48FF6574F8CA003636971AF462 /* MeasurementTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8990E77B981C72042BC8053580165926 /* MeasurementTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +49,7 @@
 		471F40E8200B939900EB245E /* ColumnPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnPath.swift; sourceTree = "<group>"; };
 		471F40EA200B95F600EB245E /* PickerColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerColumn.swift; sourceTree = "<group>"; };
 		471F40EC200B960C00EB245E /* InputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputType.swift; sourceTree = "<group>"; };
+		471F40EE200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeasurementTextField+BodyMetrics.swift"; sourceTree = "<group>"; };
 		49302D8A11E5417E9A6F6DDEAC285010 /* Pods-MeasurementTextField_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MeasurementTextField_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		526D342D2E6247A90E21CD1D8F6BA704 /* Pods_MeasurementTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeasurementTextField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55EE4C454BF0B73678D8638356C972BF /* Pods-MeasurementTextField_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MeasurementTextField_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				471F40EA200B95F600EB245E /* PickerColumn.swift */,
 				471F40EC200B960C00EB245E /* InputType.swift */,
 				FFBF69DE532099CBB86F772516A6092E /* Support Files */,
+				471F40EE200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift */,
 			);
 			name = MeasurementTextField;
 			path = ../..;
@@ -351,6 +354,7 @@
 				471F40ED200B960C00EB245E /* InputType.swift in Sources */,
 				471F40E7200B92ED00EB245E /* UIPickerView+ColumnPath.swift in Sources */,
 				471F40E5200B90E400EB245E /* TextField.swift in Sources */,
+				471F40EF200D256A00EB245E /* MeasurementTextField+BodyMetrics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

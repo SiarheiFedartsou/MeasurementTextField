@@ -11,17 +11,11 @@ import MeasurementTextField
 
 class ViewController: UIViewController {
 
-    private let heightTextField1 = MeasurementTextField<UnitLength>(inputType: .keyboard(.centimeters, showMeasureUnit: true))
-    private let heightTextField2 = MeasurementTextField<UnitLength>(inputType: .picker([
-        PickerColumn(unit: UnitLength.feet, range: 0...9),
-        PickerColumn(unit: UnitLength.inches, range: 0...11)
-        ]))
+    private let heightTextField1 = MeasurementTextField.forBodyHeight(locale: Locale(identifier: "de_DE"))
+    private let heightTextField2 = MeasurementTextField.forBodyHeight(locale: Locale(identifier: "en_US"))
     
-    private let weightTextField1 = MeasurementTextField<UnitMass>(inputType: .keyboard(.kilograms, showMeasureUnit: false))
-    private let weightTextField2 = MeasurementTextField<UnitMass>(inputType: .picker([
-        PickerColumn(unit: UnitMass.kilograms, range: 60...120),
-        PickerColumn(unit: UnitMass.grams, range: 0...1000, step: 100)
-    ]))
+    private let weightTextField1 = MeasurementTextField.forBodyWeight(locale: Locale(identifier: "de_DE"))
+    private let weightTextField2 = MeasurementTextField.forBodyWeight(locale: Locale(identifier: "en_US"))
     
     private let angleTextField = MeasurementTextField<UnitAngle>(inputType: .picker([
         PickerColumn(unit: UnitAngle.degrees, range: 0...360),

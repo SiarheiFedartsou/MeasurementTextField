@@ -5,9 +5,17 @@
 [![License](https://img.shields.io/cocoapods/l/MeasurementTextField.svg?style=flat)](http://cocoapods.org/pods/MeasurementTextField)
 [![Platform](https://img.shields.io/cocoapods/p/MeasurementTextField.svg?style=flat)](http://cocoapods.org/pods/MeasurementTextField)
 
+UITextField-based control for (NS)Measurement values input. Provides type-safe keyboard and picker based input of different measurement such as length, mass, speed etc. See example app for API details.
+
+## Screenshots
+
+![Screenshot 1](/images/screenshot1.png)
+![Screenshot 2](/images/screenshot2.png)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 
 ## Requirements
 
