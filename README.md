@@ -21,7 +21,6 @@ import MeasurementTextField
 Need text field for angle input? Just write:
 ```swift
 let angleTextField = MeasurementTextField<UnitAngle>(inputType: .keyboard(.degrees))
-]))
 ```
 Instead of `UnitAngle` you can use [any `Dimension` type defined in Foundation](https://developer.apple.com/documentation/foundation/dimension) or implement own `Dimension` subclass if you need something special.
 Then to obtain [Measurement](https://developer.apple.com/documentation/foundation/measurement) value inputted by user just use `value` property:
