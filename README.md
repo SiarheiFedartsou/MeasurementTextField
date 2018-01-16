@@ -32,7 +32,7 @@ if let value = angleTextField.value {
     print("You cleared the field!")
 }
 ```
-Degrees input is not enough? Need also arc minutes and arc seconds? Just use another input type:
+Degrees input is not enough? Want also arc minutes and arc seconds? Just use another input type:
 ```swift
 let angleTextField = MeasurementTextField<UnitAngle>(inputType: .picker([
     PickerColumn(unit: UnitAngle.degrees, range: 0...360, step: 1.0), // `step` is optional here, 1.0 by default
