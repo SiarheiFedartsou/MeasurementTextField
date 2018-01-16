@@ -52,7 +52,7 @@ angleTextField.addTarget(self, action: #selector(onAngleValueChanged), for: .val
 
 To change text color of measurement unit label for `.keyboard` input type just change `tintColor`:
 ```swift
-angleTextField.addTarget.tintColor = .red
+angleTextField.tintColor = .red
 ```
 Want to remove it completely? Just pass `showMeasureUnit: false` in input type configuration:
 ```swift
