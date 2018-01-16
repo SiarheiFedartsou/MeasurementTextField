@@ -12,26 +12,19 @@ private enum Layout {
     static let measureUnitLabelRightInset: CGFloat = 10.0
 }
 
-public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    
-    public var textField: UITextField {
-        return internalTextField
-    }
-    
-    private lazy var internalTextField: TextField = {
-        let textField = TextField()
-        textField.keyboardType = .decimalPad
-        textField.delegate = self
-        textField.addTarget(self, action: #selector(onTextChanged), for: .editingChanged)
-        return textField
-    }()
-    
+public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     private lazy var pickerView: UIPickerView = {
         let pickerView = UIPickerView()
         pickerView.delegate = self
         return pickerView
+    }()
+    
+    private lazy var unitLabel: UILabel = {
+        let unitLabel = UILabel()
+        unitLabel.textColor = tintColor
+        unitLabel.font = font
+        return unitLabel
     }()
     
     private let inputType: InputType<UnitType>
@@ -57,35 +50,60 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
         fatalError("init(coder:) has not been implemented")
     }
     
+    private var showCaret: Bool = true {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    public override func caretRect(for position: UITextPosition) -> CGRect {
+        return showCaret ? super.caretRect(for: position) : .zero
+    }
+    
+    private weak var realDelegate: UITextFieldDelegate?
+    public override weak var delegate: UITextFieldDelegate? {
+        set {
+            realDelegate = newValue
+        }
+        get {
+            return realDelegate
+        }
+    }
+    
     private func setup() {
-        addSubview(internalTextField)
-        
+        keyboardType = .decimalPad
+        super.delegate = self
+        addTarget(self, action: #selector(onTextChanged), for: .editingChanged)
+
         switch inputType {
         case let .keyboardInput(unit, showMeasureUnit):
             guard showMeasureUnit else { return }
             let formatter = MeasurementFormatter()
-            let unitLabel = UILabel()
+            formatter.unitStyle = .short
             unitLabel.text = formatter.string(from: unit)
             unitLabel.sizeToFit()
             unitLabel.frame.size.width += Layout.measureUnitLabelRightInset
-            internalTextField.rightView = unitLabel
-            internalTextField.rightViewMode = .always
+            rightView = unitLabel
+            rightViewMode = .always
         case .picker:
-            internalTextField.inputView = pickerView
-            internalTextField.showCaret = false
-            internalTextField.clearButtonMode = .whileEditing
+            inputView = pickerView
+            showCaret = false
+            clearButtonMode = .whileEditing
         }
         
     }
     
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        internalTextField.frame = bounds
+    public override func tintColorDidChange() {
+        super.tintColorDidChange()
+        unitLabel.textColor = tintColor
     }
     
-    
-    public var onValueChanged: (Measurement<UnitType>?) -> Void = { _ in }
-    
+    public override var font: UIFont? {
+        didSet {
+            unitLabel.font = font
+        }
+    }
+
     public var value: Measurement<UnitType>? {
         set {
             internalValue = newValue
@@ -93,11 +111,11 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
             switch inputType {
             case let .keyboardInput(unit, _):
                 guard let value = value else {
-                    internalTextField.text = ""
+                    text = ""
                     return
                 }
                 let convertedValue = value.converted(to: unit)
-                internalTextField.text = stringFromDouble(convertedValue.value)
+                text = stringFromDouble(convertedValue.value)
             case let .picker(columns):
                 setPicker(to: value, columns: columns)
             }
@@ -111,12 +129,12 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
     
 
     @objc private func onTextChanged() {
-        guard let text = internalTextField.text else { return }
+        guard let text = self.text else { return }
         
         if case .picker = inputType { // handle "clear" button
             if text.isEmpty {
                 internalValue = nil
-                onValueChanged(nil)
+                sendActions(for: .valueChanged)
             }
             return
         }
@@ -124,67 +142,13 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
         guard case let .keyboardInput(unit, _) = inputType else { return }
         guard let decimalValue = doubleFromString(text) else {
             internalValue = nil
-            onValueChanged(nil)
+            sendActions(for: .valueChanged)
             return
         }
         internalValue = Measurement(value: decimalValue, unit: unit)
-        onValueChanged(value)
+        sendActions(for: .valueChanged)
     }
-    
 
-    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        guard case let .picker(columns) = inputType else {
-            assert(false)
-            return 0
-        }
-        return columns.count
-    }
-    
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard case .keyboardInput = inputType else { return false }
-        guard let text = textField.text as NSString? else { return false }
-        let newText = text.replacingCharacters(in: range, with: string)
-        return doubleFromString(newText) != nil || newText.isEmpty
-    }
-    
-    
-    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        guard case let .picker(columns) = inputType else {
-            assert(false)
-            return 0
-        }
-        let column = columns[component]
-        return column.rows.count
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        guard case let .picker(columns) = inputType else {
-            assert(false)
-            return nil
-        }
-        let column = columns[component]
-
-        let formatter = MeasurementFormatter()
-        formatter.unitStyle = .short
-        formatter.unitOptions = .providedUnit
-        
-        let measurement = Measurement(value: column.rows[row], unit: column.unit)
-        
-        return formatter.string(from: measurement)
-    }
-    
-    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        guard case let .picker(columns) = inputType else {
-            assert(false)
-            return
-        }
-        
-        let path = pickerView.columnPath
-        showValue(for: path, columns: columns)
-        self.internalValue = value(at: path, in: columns)
-        self.onValueChanged(self.internalValue)
-    }
-    
     private func value(at columnPath: ColumnPath, in columns: [PickerColumn<UnitType>]) -> Measurement<UnitType>? {
         var measurements: [Measurement<UnitType>] = []
         for (columnIndex, rowIndex) in columnPath.enumerated() {
@@ -211,7 +175,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
             formattedValues.append(formatter.string(from: measurement))
         }
         
-        self.internalTextField.text = formattedValues.joined(separator: " ")
+        text = formattedValues.joined(separator: " ")
     }
     
     private func setPicker(to value: Measurement<UnitType>?, columns: [PickerColumn<UnitType>]) {
@@ -263,5 +227,90 @@ public final class MeasurementTextField<UnitType: Dimension>: UIView, UITextFiel
         let numberFormatter = NumberFormatter()
         return numberFormatter.string(from: double as NSNumber)
     }
+
+    // MARK UIPickerViewDelegate/UIPickerViewDataSource
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        guard case let .picker(columns) = inputType else {
+            assert(false)
+            return 0
+        }
+        return columns.count
+    }
+
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        guard case let .picker(columns) = inputType else {
+            assert(false)
+            return 0
+        }
+        let column = columns[component]
+        return column.rows.count
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        guard case let .picker(columns) = inputType else {
+            assert(false)
+            return nil
+        }
+        let column = columns[component]
+        
+        let formatter = MeasurementFormatter()
+        formatter.unitStyle = .short
+        formatter.unitOptions = .providedUnit
+        
+        let measurement = Measurement(value: column.rows[row], unit: column.unit)
+        
+        return formatter.string(from: measurement)
+    }
+    
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guard case let .picker(columns) = inputType else {
+            assert(false)
+            return
+        }
+        
+        let path = pickerView.columnPath
+        showValue(for: path, columns: columns)
+        self.internalValue = value(at: path, in: columns)
+        sendActions(for: .valueChanged)
+    }
+    
+    
+    // MARK: UITextFieldDelegate
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard case .keyboardInput = inputType else { return false }
+        guard let text = textField.text as NSString? else { return false }
+        let newText = text.replacingCharacters(in: range, with: string)
+        return doubleFromString(newText) != nil || newText.isEmpty
+    }
+    
+    public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return realDelegate?.textFieldShouldBeginEditing?(textField) ?? true
+    }
+    
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        realDelegate?.textFieldDidBeginEditing?(textField)
+    }
+    
+    public func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return realDelegate?.textFieldShouldEndEditing?(textField) ?? true
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        realDelegate?.textFieldDidEndEditing?(textField)
+    }
+    
+    public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        realDelegate?.textFieldDidEndEditing?(textField, reason: reason)
+    }
+
+    public func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return realDelegate?.textFieldShouldClear?(textField) ?? true
+    }
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return realDelegate?.textFieldShouldReturn?(textField) ?? true
+    }
+    
 }
 
