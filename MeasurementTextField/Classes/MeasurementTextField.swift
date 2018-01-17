@@ -74,7 +74,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
         keyboardType = .decimalPad
         super.delegate = self
         addTarget(self, action: #selector(onTextChanged), for: .editingChanged)
-
+        
         switch inputType {
         case let .keyboardInput(unit, showMeasureUnit):
             guard showMeasureUnit else { return }
@@ -103,7 +103,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
             unitLabel.font = font
         }
     }
-
+    
     public var value: Measurement<UnitType>? {
         set {
             internalValue = newValue
@@ -127,7 +127,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
     
     private var internalValue: Measurement<UnitType>?
     
-
+    
     @objc private func onTextChanged() {
         guard let text = self.text else { return }
         
@@ -148,7 +148,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
         internalValue = Measurement(value: decimalValue, unit: unit)
         sendActions(for: .valueChanged)
     }
-
+    
     private func value(at columnPath: ColumnPath, in columns: [PickerColumn<UnitType>]) -> Measurement<UnitType>? {
         var measurements: [Measurement<UnitType>] = []
         for (columnIndex, rowIndex) in columnPath.enumerated() {
@@ -184,6 +184,8 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
         var columnPath: ColumnPath = []
         var accumulator: Measurement<UnitType>?
         
+        let threshold = 0.0001
+        
         for (columnIndex, column) in columns.enumerated() {
             columnPath.append(0)
             
@@ -193,11 +195,19 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
             } else {
                 convertedValue = value.converted(to: column.unit)
             }
+            
             for (rowIndex, row) in column.rows.enumerated() {
-                if row - convertedValue.value > 0.0 {
-                    columnPath[columnIndex] = max(0, rowIndex - 1)
+                if abs(row - convertedValue.value) < threshold {
+                    columnPath[columnIndex] = rowIndex
                     break
                 }
+            }
+            
+            // handle edge cases
+            if let first = column.rows.first, (first > convertedValue.value || abs(first - convertedValue.value) < threshold) {
+                columnPath[columnIndex] = 0
+            } else if let last = column.rows.last, (last < convertedValue.value || abs(last - convertedValue.value) < threshold) {
+                columnPath[columnIndex] = column.rows.count - 1
             }
             
             let selectedValue = column.rows[columnPath[columnIndex]]
@@ -217,7 +227,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
         guard measurements.count > 1 else { return measurements.first }
         return measurements[1...].reduce(measurements[0], +)
     }
- 
+    
     private func doubleFromString(_ string: String) -> Double? {
         let numberFormatter = NumberFormatter()
         return numberFormatter.number(from: string).flatMap { $0.doubleValue }
@@ -227,7 +237,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
         let numberFormatter = NumberFormatter()
         return numberFormatter.string(from: double as NSNumber)
     }
-
+    
     // MARK UIPickerViewDelegate/UIPickerViewDataSource
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         guard case let .picker(columns) = inputType else {
@@ -236,7 +246,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
         }
         return columns.count
     }
-
+    
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         guard case let .picker(columns) = inputType else {
             assert(false)
@@ -303,7 +313,7 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
     public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         realDelegate?.textFieldDidEndEditing?(textField, reason: reason)
     }
-
+    
     public func textFieldShouldClear(_ textField: UITextField) -> Bool {
         return realDelegate?.textFieldShouldClear?(textField) ?? true
     }
@@ -313,4 +323,3 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
     }
     
 }
-
