@@ -193,7 +193,8 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
             if let accumulator = accumulator {
                 convertedValue = value.converted(to: column.unit) - accumulator.converted(to: column.unit)
             } else {
-                convertedValue = value.converted(to: column.unit)
+                let value = floor(value.converted(to: column.unit).value)
+                convertedValue = Measurement(value: value, unit: column.unit)
             }
             
             for (rowIndex, row) in column.rows.enumerated() {
@@ -323,3 +324,4 @@ public final class MeasurementTextField<UnitType: Dimension>: UITextField, UITex
     }
     
 }
+
